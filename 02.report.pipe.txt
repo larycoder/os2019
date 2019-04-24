@@ -1,0 +1,38 @@
+>>ls /usr/bin | grep list
+acpi_listen
+dlist_test
+fc-conflist
+fc-list
+genl-ctrl-list
+klist
+libwacom-list-local-devices
+nf-ct-list
+nf-exp-list
+nl-addr-list
+nl-class-list
+nl-cls-list
+nl-link-list
+nl-list-caches
+nl-list-sockets
+nl-neigh-list
+nl-neightbl-list
+nl-qdisc-list
+nl-route-list
+nl-rule-list
+nl-tctree-list
+pango-list
+sasldblistusers2
+-----------------
+>>wc -l /etc/passwd
+23 /etc/passwd
+-----------------
+>>free -h | awk '{print($1"   "$2)}'
+total     used
+Mem:     3.6Gi
+Swap:     508Mi
+-----------------
+echo $((`grep "siblings" /proc/cpuinfo| awk '{print($3)}'| paste -sd+`))
+16
+-----------------
+find *.jpg | wc -l
+5
