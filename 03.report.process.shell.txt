@@ -1,0 +1,82 @@
+ps aux| head -n 10
+
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.3  41864 13132 ?        Ss   09:52   0:01 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    09:52   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   09:52   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   09:52   0:00 [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   09:52   0:00 [kworker/0:0H-kblockd]
+root         7  0.0  0.0      0     0 ?        I    09:52   0:00 [kworker/0:1-pm]
+root         9  0.0  0.0      0     0 ?        I<   09:52   0:00 [mm_percpu_wq]
+root        10  0.0  0.0      0     0 ?        S    09:52   0:00 [ksoftirqd/0]
+root        11  0.0  0.0      0     0 ?        I    09:52   0:01 [rcu_sched]
+
+-----------------------------------------------------------------------------------
+ps aux | grep feh | grep -v grep | awk '{print($2)}'
+2156
+
+-----------------------------------------------------------------------------------
+Name:	feh
+Umask:	0022
+State:	S (sleeping)
+Tgid:	2196
+Ngid:	0
+Pid:	2196
+PPid:	1869
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	256
+Groups:	0 150 1000 
+NStgid:	2196
+NSpid:	2196
+NSpgid:	2196
+NSsid:	1869
+VmPeak:	   82104 kB
+VmSize:	   75936 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   18448 kB
+VmRSS:	   12584 kB
+RssAnon:	    5364 kB
+RssFile:	    7220 kB
+RssShmem:	       0 kB
+VmData:	    4892 kB
+VmStk:	     132 kB
+VmExe:	     148 kB
+VmLib:	   12968 kB
+VmPTE:	     184 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+Threads:	1
+SigQ:	0/14855
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000000000
+SigCgt:	0000000180106a06
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	thread vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	92
+nonvoluntary_ctxt_switches:	1
+----------------------------------------------------------------------------------
+kill -s STOP 2196
+
+----------------------------------------------------------------------------------
+kill -s CONT 2196
+
+----------------------------------------------------------------------------------
+kill -s KILL 2196
+
+----------------------------------------------------------------------------------
