@@ -1,0 +1,14 @@
+for id in `cat /proc/sched_debug | grep systemd | cut -c21-23`;do cat /proc/$id/sched | grep 'systemd\|nr_switches'; done >> 05.report.process.scheduler.txt
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+systemd-udevd (214, #threads: 1)
+nr_switches                                  :                  697
+systemd (436, #threads: 1)
+nr_switches                                  :                   44
+systemd (1, #threads: 1)
+nr_switches                                  :                 1435
+systemd-logind (354, #threads: 1)
+nr_switches                                  :                13136
+systemd-journal (199, #threads: 1)
+nr_switches                                  :                  727
+systemd-timesyn (352, #threads: 2)
+nr_switches                                  :                  109
