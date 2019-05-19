@@ -18,7 +18,6 @@ int last = 0;
 void produce (pkg *i);
 pkg receive (void);
 pkg pack (char *name, char *version, char *author);
-void garbage (pkg *box);
 
 void *factory_thread (void *arg);
 void *user_thread (void *arg);
